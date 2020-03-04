@@ -1,0 +1,49 @@
+{% extends "public_template.html" %}
+
+{% block content %}
+
+<div class="container jumbotron">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload an image</h1>
+      <hr>
+
+      <form action="/upload-image" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image">{{name}}</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<div class="container">
+
+    <div class="row">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" >
+    <img src={{src}} alt="" width="300" height="400" >
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+    <img src={{predict_src}} alt="" width="300" height="400">
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
